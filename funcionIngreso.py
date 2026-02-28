@@ -56,20 +56,18 @@ def acceder_plataforma(documento_bd,contraseña_bd,numeroIntentos):
 import random
 
 def generar_niveles_agua(cantidad):
-    """
-    Genera una lista de medidas de niveles de agua.
-    Rango: 0 a 600
-    """
+    #Genera una lista de medidas de niveles de agua. Rango: 0 a 600
+    
     lista_medidas = []
     
     for i in range(cantidad):
-        # Generamos un número entero aleatorio entre 0 y 600
-        medida = random.randint(0, 600)
+        # Generamos un número entero aleatorio
+        medida = random.randint(0, 500)
         lista_medidas.append(medida)
         
     return lista_medidas
 
-cantidad_a_generar = int(input("¿Cuántas mediciones de agua desea generar?: "))
+cantidad_a_generar = 200
 niveles = generar_niveles_agua(cantidad_a_generar)
 
 print(f"\nLista de medidas generadas: {niveles}")
@@ -79,7 +77,7 @@ print(f"Total de registros: {len(niveles)}")
 #funcion para promediar el nivel del agua
 
 def calcular_promedio_niveles(lista_medidas):
-    """Calcula y devuelve el promedio de la lista recibida."""
+    #Calcula y devuelve el promedio de la lista recibida.
     if not lista_medidas:
         return 0
     
@@ -90,6 +88,7 @@ def calcular_promedio_niveles(lista_medidas):
     return nivel_promedio_agua
 
 nivel_promedio= calcular_promedio_niveles(niveles)
+print(f"El promedio de los niveles de agua generado fue de: {nivel_promedio}")
 
 
 #Funcion para clasificar el agua
